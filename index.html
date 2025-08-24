@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+
+    
+<body class="bg-[#F4F5F7] h-[100vh] flex justify-center items-center">
+  <form class=" bg-white rounded-2xl p-6 shadow-md">
+    
+    <!-- Mobile Number -->
+    <div class="mb-4">
+      <label for="mobile" class="block font-medium mb-2">Mobile Number</label>
+      <input 
+        id="mobile" 
+        name="mobile" 
+        type="text" 
+        placeholder="Enter Your Number" 
+        class="w-[338px] h-[52px] rounded-full bg-[#F4F5F7] px-4 outline-none"
+      />
+    </div>
+
+    <!-- Pin -->
+    <div class="mb-6">
+      <label for="pin" class="block font-medium mb-2">4 Digit Pin</label>
+      <input 
+        id="pin" 
+        name="pin" 
+        type="password" 
+        maxlength="4"
+        placeholder="Enter 4 Digit Pin" 
+        class="w-[338px] h-[52px] rounded-full bg-[#F4F5F7] px-4 outline-none"
+      />
+    </div>
+
+    <!-- Button -->
+    <button 
+      type="submit" 
+      class="w-[338px] h-[52px] bg-[#0874F2] rounded-full font-bold text-white hover:bg-[#0564d1] transition"
+    >
+      Log In
+    </button>
+    
+  </form>
+</body>
+
+</html>
