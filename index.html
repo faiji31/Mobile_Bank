@@ -9,8 +9,13 @@
 </head>
 
     
-<body class="bg-[#F4F5F7] h-[100vh] flex justify-center items-center">
-  <form class=" bg-white rounded-2xl p-6 shadow-md">
+<body class="bg-[#F4F5F7] h-[100vh] flex flex-col justify-center items-center">
+    <div class="bg-[url(./assets/bg.png)] w-[300px] h-[170px]  bg-cover flex justify-center items-center mb-6">
+
+        <img src="assets/Group.png" alt="">
+        
+    </div>
+  <form class=" w-[400px] bg-white rounded-2xl p-6 shadow-md">
     
     <!-- Mobile Number -->
     <div class="mb-4">
@@ -38,14 +43,15 @@
     </div>
 
     <!-- Button -->
-    <button 
-      type="submit" 
-      class="w-[338px] h-[52px] bg-[#0874F2] rounded-full font-bold text-white hover:bg-[#0564d1] transition"
+    <button id="loginbtn"
+       
+      class="w-[338px] h-[52px] bg-[#0874F2] rounded-full font-bold text-white hover:bg-[#0564d1] transition cursor-pointer"
     >
       Log In
     </button>
     
   </form>
+  <script src="index.js"></script>
 </body>
 
 </html>
