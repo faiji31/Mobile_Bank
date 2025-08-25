@@ -7,14 +7,14 @@ document.getElementById("loginbtn").addEventListener('click',function(e){
     const pinNumbervalue = document.getElementById("pin-number").value
     const PinNumbervalueConverted = parseInt(pinNumbervalue);
 
-    console.log(mobilenumberValueConverted,PinNumbervalueConverted);
+   
 
 
     if(mobilenumberValueConverted === mobilenumber && PinNumbervalueConverted === pinNumber){
-        console.log("all value matched");
+       window.location.href="home.html"
 
     }else{
-        console.log('invalid');
+       alert("Invalid User")
     }
     
 
