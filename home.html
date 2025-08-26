@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
-    <title>Home Page</title>
-</head>
-<body class="bg-[#F4F5F7] h-[100vh]">
-   <div class="flex justify-between items-center min-h-[50px] max-w-lg mx-auto border-b-1 border-gray-400 p-3">
-    <div class="flex items-center">
-        <img src="assets/Group.png" alt="" class="w-[50px] h-[48px]">
-        <div class="ml-3">
-            <h3 class=" text-[18px] text-[#080808] font-bold ">$45000</h3>
-            <p class="text-[14px] text-gray-400 mt-2">Avilable Balance</p>
-        </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payooo - Home Page</title>
 
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- DaisyUI (works with Tailwind via CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#F4F5F7] min-h-screen">
+  <!-- Top Bar -->
+  <div class="flex justify-between items-center max-w-lg mx-auto border-b border-gray-300 p-3">
+    <div class="flex items-center">
+      <img src="assets/Group.png" alt="logo" class="w-[50px] h-[48px]">
+      <div class="ml-3">
+        <h3 class="text-[18px] text-[#080808] font-bold">$45000</h3>
+        <p class="text-[14px] text-gray-400">Available Balance</p>
+      </div>
     </div>
     <div>
-        <button class="btn w-[102px] h-[38px] text-gray-400 border-2 rounded-lg">
-            <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i> Logout</button>
+      <button class="btn btn-outline btn-sm">
+        <i class="fa-solid fa-arrow-right-from-bracket rotate-180 mr-1"></i> Logout
+      </button>
     </div>
-   </div>
-   <div class="max-w-lg mx-auto mt-5">
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="max-w-lg mx-auto mt-5 p-3">
     <h3 class="font-bold text-[24px]">🔥 Welcome to Payooo!</h3>
-    <p class="text-[16px] text-gray-500">Enjoy easy and convenient financial services with us. <br> Cashout charge is low and </p>
-   </div>
-    
+    <p class="text-[16px] text-gray-500">
+      Enjoy easy and convenient financial services with us. <br>
+      Cashout charge is low and secure.
+    </p>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="grid grid-cols-3 gap-3 max-w-lg mx-auto mt-5">
+    <div class="border-2 border-gray-300 p-3 rounded-lg">
+      <img src="assets/wallet1.png" alt="" class="mx-auto">
+      <h1 class="font-semibold text-[14px] mt-2">Add Money</h1>
+    </div>
+    <div class="border-2 border-gray-300 p-3 rounded-lg">
+      <img src="assets/send1.png" alt="" class="mx-auto">
+      <h1 class="font-semibold text-[14px] mt-2">Cash Out</h1>
+    </div>
+    <div class="border-2 border-gray-300 p-3 rounded-lg">
+      <img src="assets/money1.png" alt="" class="mx-auto">
+      <h1 class="font-semibold text-[14px] mt-2">Transfer Money</h1>
+    </div>
+    <div class="border-2 border-gray-300 p-3 rounded-lg">
+      <img src="assets/bonus1.png" alt="" class="mx-auto">
+      <h1 class="font-semibold text-[14px] mt-2">Get Bonus</h1>
+    </div>
+    <div class="border-2 border-gray-300 p-3 rounded-lg">
+      <img src="assets/purse1.png" alt="" class="mx-auto">
+      <h1 class="font-semibold text-[14px] mt-2">Pay Bill</h1>
+    </div>
+    <div class="border-2 border-gray-300 p-3 rounded-lg">
+      <img src="assets/transaction1.png" alt="" class="mx-auto">
+      <h1 class="font-semibold text-[14px] mt-2">Transaction</h1>
+    </div>
+  </div>
 </body>
 </html>
