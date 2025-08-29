@@ -46,11 +46,11 @@
       </p>
     </div>
     <div class="min-h-[200px] grid grid-cols-3 max-w-lg mx-auto mt-5 gap-4">
-      <div class="text-center p-3 rounded-lg border-2 border-gray-500">
+      <div id="add-money-btn" class="text-center p-3 rounded-lg border-2 border-gray-500">
         <img src="assets/wallet1.png" alt="" class="mx-auto" />
         <h1>Add Money</h1>
       </div>
-      <div class="text-center p-3 rounded-lg border-2 border-gray-500">
+      <div id="cash-out-btn" class="text-center p-3 rounded-lg border-2 border-gray-500">
         <img src="assets/send1.png" alt="" class="mx-auto" />
         <h1>Cash Out</h1>
       </div>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <h1 class="mt-5 font-semibold text-[18px] max-w-lg mx-auto">Add Money</h1>
-    <div>
+    <div id="add-money-parent">
       <form
         class="w-[580px] bg-white rounded-2xl p-6 shadow-md mt-2 max-w-lg mx-auto"
       >
@@ -136,6 +136,52 @@
         </button>
       </form>
     </div>
+    <!-- Cashout -->
+     <div id="cashout-parent">
+       <h1 class="mt-5 font-semibold text-[18px] max-w-lg mx-auto">Cash Out</h1>
+      <form class="mt-3 w-[580px] bg-white rounded-2xl p-6 shadow-md  max-w-lg mx-auto">
+        <div class="mb-6">
+          <label for="pin" class="block font-medium mb-2">Agent Number</label>
+          <input
+            id="bank-acc"
+            name=""
+            type=""
+            maxlength="11"
+            placeholder="Enter 11 Digit Account Number"
+            class="w-[440px] h-[52px] rounded-full bg-[#F4F5F7] px-4 outline-none"
+          />
+        </div>
+          <div class="mb-6">
+          <label for="pin" class="block font-medium mb-2">Amount</label>
+          <input
+            id="bank-acc"
+            name=""
+            type=""
+            maxlength="11"
+            placeholder="Enter 11 Digit Account Number"
+            class="w-[440px] h-[52px] rounded-full bg-[#F4F5F7] px-4 outline-none"
+          />
+        </div>
+         <div class="mb-6">
+          <label for="pin" class="block font-medium mb-2">4 Digit Pin</label>
+          <input
+            id="pin-number"
+            name="pin"
+            type="password"
+            maxlength="4"
+            placeholder="Enter 4 Digit Pin"
+            class="w-[440px] h-[52px] rounded-full bg-[#F4F5F7] px-4 outline-none"
+          />
+        </div>
+        <button
+          id="add-money-btn"
+          class="w-[440px] h-[52px] bg-[#0874F2] rounded-full font-bold text-white hover:bg-[#0564d1] transition cursor-pointer"
+        >
+          Cash Out
+        </button>
+
+      </form>
+     </div>
     <script src="home.js"></script>
   </body>
 </html>
