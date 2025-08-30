@@ -38,3 +38,5 @@ document.getElementById('cash-out-btn').addEventListener('click',function(){
     document.getElementById('add-money-parent').style.display = 'none'
     document.getElementById('cashout-parent').style.display = "block"
 })
+
+// cashout btn
