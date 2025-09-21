@@ -48,12 +48,12 @@
         </p>
       </div>
       <div class="min-h-[200px] p-3 grid grid-cols-3 mx-w-lg mx-auto gap-4">
-        <div class=" text-center border-2 border-gray-200 rounded-xl">
+        <div id="add-btn" class=" text-center border-2 border-gray-200 rounded-xl">
           <img src="wallet1.png" alt="" class="mx-auto" />
           <h1>Add Money</h1>
         </div>
 
-        <div class="border-2 border-gray-200 text-center rounded-xl">
+        <div id="cash-btn" class="border-2 border-gray-200 text-center rounded-xl">
           <img src="send1.png" alt="" class="mx-auto" />
           <h1>Cash Out</h1>
         </div>
@@ -77,7 +77,8 @@
       </div>
     </div>
     <div class="all-form-sections max-w-lg mx-auto">
-      <div>
+        <!-- add money -->
+      <div id="add-money">
         <h1 class="block mb-5 font-semibold mt-5">Add Money</h1>
         <form class="bg-white rounded-2xl p-8 ">
           <div class="mb-4">
@@ -110,6 +111,11 @@
       Add Money
     </button>
         </form>
+      </div>
+      <!-- cash out -->
+      <div id="cash-out">
+         <h1 class="block mb-5 font-semibold mt-5">Add Money</h1>
+
       </div>
     </div>
     <script src="main.js"></script>
