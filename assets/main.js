@@ -37,3 +37,6 @@ document.getElementById('cash-btn').addEventListener('click',function(e){
      document.getElementById('cash-out').style.display = 'block'
 
 })
+
+// cash out section
+
