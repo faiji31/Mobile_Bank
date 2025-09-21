@@ -5,5 +5,11 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
     const Accountnumber = document.getElementById('account-number').value
     const Addmoney = parseInt( document.getElementById('add-money').value)
     const Pin = document.getElementById('pin-number').value
-    console.log(bank,Accountnumber,Addmoney,Pin)
+
+    const AvilableBalence = parseInt(document.getElementById('tk').innerText)
+    console.log(AvilableBalence)
+
+    const totalnewAilableBalence = Addmoney + AvilableBalence
+    document.getElementById('tk').innerText =totalnewAilableBalence
+   
 })
