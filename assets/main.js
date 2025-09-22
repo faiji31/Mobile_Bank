@@ -1,11 +1,21 @@
 const validpin =1234
 
+function getInputValueNumber(id){
+    const inputField = document.getElementById(id)
+    const inputFieldValue = inputField.value
+    const inputFieldValueNumber = parseInt(inputFieldValue)
+
+    return inputFieldValueNumber
+
+}
+
+
 document.getElementById('add-money-btn').addEventListener('click',function(e){
     e.preventDefault()
    
     const bank = document.getElementById('bank').value
     const Accountnumber = document.getElementById('account-number').value
-    const Addmoney = parseInt( document.getElementById('add-money').value)||0;
+    const Addmoney = getInputValueNumber('add-money')
     const Pin = parseInt(document.getElementById('pin-number').value)||0;
 
     const AvilableBalence = parseInt(document.getElementById('tk').innerText)
