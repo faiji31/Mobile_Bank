@@ -42,8 +42,14 @@ document.getElementById('cash-btn').addEventListener('click',function(e){
 document.getElementById('cash-out-btn').addEventListener('click',function(e){
     e.preventDefault(e)
     const agent = document.getElementById('agent-number').value
-    const TotalAmount = parseInt(document.getElementById('withdraw-money').value)
+    const WithdrawMoney = parseInt(document.getElementById('withdraw-money').value)
     const PinNumber = parseInt(document.getElementById('pinnumber').value)
 
-    console.log(agent,TotalAmount,PinNumber)
+    
+    const TotalBalence = parseInt(document.getElementById('tk').innerText)
+
+
+    const totalwithdrawBalence = TotalBalence - WithdrawMoney
+    document.getElementById('tk').innerText=
+    totalwithdrawBalence
 })
