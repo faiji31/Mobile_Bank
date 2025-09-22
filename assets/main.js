@@ -9,6 +9,14 @@ function getInputValueNumber(id){
 
 }
 
+function getInputValueInner(id){
+    const innertext = document.getElementById(id)
+    const innertextvalue = innertext.innerText
+    const innertextvaluenumber = parseInt(innertextvalue)
+
+    return innertextvaluenumber
+}
+
 
 document.getElementById('add-money-btn').addEventListener('click',function(e){
     e.preventDefault()
@@ -16,9 +24,9 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
     const bank = document.getElementById('bank').value
     const Accountnumber = document.getElementById('account-number').value
     const Addmoney = getInputValueNumber('add-money')
-    const Pin = parseInt(document.getElementById('pin-number').value)||0;
+    const Pin = getInputValueNumber('pin-number')
 
-    const AvilableBalence = parseInt(document.getElementById('tk').innerText)
+    const AvilableBalence = getInputValueInner('tk')
    if(Accountnumber.length<11){
     alert("enter your valid account number")
     return
@@ -52,8 +60,8 @@ document.getElementById('cash-btn').addEventListener('click',function(e){
 document.getElementById('cash-out-btn').addEventListener('click',function(e){
     e.preventDefault(e)
     const agent = document.getElementById('agent-number').value
-    const WithdrawMoney = parseInt(document.getElementById('withdraw-money').value)||0;
-    const PinNumber = parseInt(document.getElementById('pinnumber').value)||0;
+    const WithdrawMoney = getInputValueNumber('withdraw-money')
+    const PinNumber = getInputValueNumber('pinnumber')
 
     if(agent.length<11){
         alert('Please provide Correct Number')
@@ -64,7 +72,7 @@ document.getElementById('cash-out-btn').addEventListener('click',function(e){
         return
     }
 
-    const TotalBalence = parseInt(document.getElementById('tk').innerText)
+    const TotalBalence = getInputValueInner('tk')
 
 
     const totalwithdrawBalence = TotalBalence - WithdrawMoney
