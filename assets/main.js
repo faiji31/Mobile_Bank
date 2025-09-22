@@ -45,7 +45,15 @@ document.getElementById('cash-out-btn').addEventListener('click',function(e){
     const WithdrawMoney = parseInt(document.getElementById('withdraw-money').value)
     const PinNumber = parseInt(document.getElementById('pinnumber').value)
 
-    
+    if(agent.length<11){
+        alert('Please provide Correct Number')
+        return
+    }
+    if(PinNumber!==validpin){
+        alert('Please Provide Correct Pin Number ')
+        return
+    }
+
     const TotalBalence = parseInt(document.getElementById('tk').innerText)
 
 
