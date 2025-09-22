@@ -39,4 +39,7 @@ document.getElementById('cash-btn').addEventListener('click',function(e){
 })
 
 // cash out section
-
+document.getElementById('cash-out-btn').addEventListener('click',function(e){
+    e.preventDefault(e)
+    console.log('click')
+})
