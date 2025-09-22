@@ -5,8 +5,8 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
    
     const bank = document.getElementById('bank').value
     const Accountnumber = document.getElementById('account-number').value
-    const Addmoney = parseInt( document.getElementById('add-money').value)
-    const Pin = parseInt(document.getElementById('pin-number').value)
+    const Addmoney = parseInt( document.getElementById('add-money').value)||0;
+    const Pin = parseInt(document.getElementById('pin-number').value)||0;
 
     const AvilableBalence = parseInt(document.getElementById('tk').innerText)
    if(Accountnumber.length<11){
@@ -28,12 +28,12 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
 document.getElementById('add-btn').addEventListener('click',function(e){
     e.preventDefault()
     document.getElementById('cash-out').style.display = 'none'
-     document.getElementById('add-money').style.display = 'block'
+     document.getElementById('add-money-bank').style.display = 'block'
 
 })
 document.getElementById('cash-btn').addEventListener('click',function(e){
     e.preventDefault()
-    document.getElementById('add-money').style.display = 'none'
+    document.getElementById('add-money-bank').style.display = 'none'
      document.getElementById('cash-out').style.display = 'block'
 
 })
@@ -42,8 +42,8 @@ document.getElementById('cash-btn').addEventListener('click',function(e){
 document.getElementById('cash-out-btn').addEventListener('click',function(e){
     e.preventDefault(e)
     const agent = document.getElementById('agent-number').value
-    const WithdrawMoney = parseInt(document.getElementById('withdraw-money').value)
-    const PinNumber = parseInt(document.getElementById('pinnumber').value)
+    const WithdrawMoney = parseInt(document.getElementById('withdraw-money').value)||0;
+    const PinNumber = parseInt(document.getElementById('pinnumber').value)||0;
 
     if(agent.length<11){
         alert('Please provide Correct Number')
