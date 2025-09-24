@@ -45,14 +45,40 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
 // toggoling feature
 document.getElementById('add-btn').addEventListener('click',function(e){
     e.preventDefault()
-    document.getElementById('cash-out').style.display = 'none'
-     document.getElementById('add-money-bank').style.display = 'block'
+    const form = document.getElementsByClassName('forms')
+
+    for(const forms of form){
+        forms.style.display = 'none';
+
+
+    }
+    document.getElementById('add-money-bank').style.display = 'block';
 
 })
 document.getElementById('cash-btn').addEventListener('click',function(e){
     e.preventDefault()
-    document.getElementById('add-money-bank').style.display = 'none'
-     document.getElementById('cash-out').style.display = 'block'
+
+    const form = document.getElementsByClassName('forms')
+
+    for(const forms of form){
+        forms.style.display ='none';
+    }
+
+    document.getElementById('cash-out').style.display ='block';
+   
+
+})
+document.getElementById('transfer-btn').addEventListener('click',function(e){
+    e.preventDefault()
+
+    const form = document.getElementsByClassName('forms')
+
+    for(const forms of form){
+        forms.style.display ='none';
+    }
+
+    document.getElementById('transfer-btn').style.display ='block';
+   
 
 })
 
