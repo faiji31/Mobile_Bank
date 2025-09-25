@@ -16,7 +16,15 @@ function getInputValueInner(id){
 
     return innertextvaluenumber
 }
+function toggoling(id){
+    const form = document.getElementsByClassName('forms')
 
+    for(const forms of form){
+        forms.style.display ='none';
+    }
+
+    document.getElementById(id).style.display ='block';
+}
 
 document.getElementById('add-money-btn').addEventListener('click',function(e){
     e.preventDefault()
@@ -45,39 +53,53 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
 // toggoling feature
 document.getElementById('add-btn').addEventListener('click',function(e){
     e.preventDefault()
-    const form = document.getElementsByClassName('forms')
+   toggoling(add-money-bank)
 
-    for(const forms of form){
-        forms.style.display = 'none';
-
-
-    }
-    document.getElementById('add-money-bank').style.display = 'block';
+   const formsbtn = document.getElementsByClassName('form-btn')
+   for (const formbtn of formsbtn){
+    
+   }
 
 })
 document.getElementById('cash-btn').addEventListener('click',function(e){
     e.preventDefault()
 
-    const form = document.getElementsByClassName('forms')
-
-    for(const forms of form){
-        forms.style.display ='none';
-    }
-
-    document.getElementById('cash-out').style.display ='block';
+   toggoling('cash-out')
    
 
 })
 document.getElementById('transfer-btn').addEventListener('click',function(e){
     e.preventDefault()
 
-    const form = document.getElementsByClassName('forms')
+   toggoling('transfer-money')
+   
 
-    for(const forms of form){
-        forms.style.display ='none';
-    }
+})
+document.getElementById('bonus-btn').addEventListener('click',function(e){
+    e.preventDefault()
 
-    document.getElementById('transfer-btn').style.display ='block';
+    toggoling('get-bonus')
+   
+
+})
+document.getElementById('bonus-btn').addEventListener('click',function(e){
+    e.preventDefault()
+
+    toggoling('get-bonus')
+   
+
+})
+document.getElementById('pay-bill-btn').addEventListener('click',function(e){
+    e.preventDefault()
+
+    toggoling('pay-bill')
+   
+
+})
+document.getElementById('transation-btn').addEventListener('click',function(e){
+    e.preventDefault()
+
+    toggoling('transation')
    
 
 })
