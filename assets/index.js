@@ -10,7 +10,7 @@ document.getElementById('login-btn').addEventListener('click',function(e){
    
 
    if(MobileNumberValueConverted===MobileNumber && PinNumberValueConverted === PinNumber){
-    window.location.href = 'main.html'
+    window.location.href = 'assets/main.html'
 
    }else{
    alert('invalid')
