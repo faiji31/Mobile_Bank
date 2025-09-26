@@ -1,146 +1,74 @@
-const validpin =1234
+const validpin = 1234;
+const transationData = [];
 
-const transationData =[]
-
-
-function getInputValueNumber(id){
-    const inputField = document.getElementById(id)
-    const inputFieldValue = inputField.value
-    const inputFieldValueNumber = parseInt(inputFieldValue)
-
-    return inputFieldValueNumber
-
+// helpers
+function getInputValueNumber(id) {
+  return parseInt(document.getElementById(id).value) || 0;
+}
+function getInputValueInner(id) {
+  return parseInt(document.getElementById(id).innerText) || 0;
+}
+function toggoling(id) {
+  const forms = document.getElementsByClassName("forms");
+  for (const f of forms) f.style.display = "none";
+  document.getElementById(id).style.display = "block";
+}
+function renderTransactions() {
+  const container = document.getElementById("transation-list");
+  container.innerHTML = "";
+  transationData.forEach((t) => {
+    const div = document.createElement("div");
+    div.className = "flex justify-between items-center border border-gray-200 bg-white rounded-xl p-4 shadow-sm";
+    div.innerHTML = `
+      <div>
+        <h1 class="font-semibold">${t.name}</h1>
+        <p class="text-sm text-gray-500">${t.date}</p>
+      </div>
+      <div><i class="fa-solid fa-ellipsis-vertical text-gray-400"></i></div>
+    `;
+    container.appendChild(div);
+  });
 }
 
-function getInputValueInner(id){
-    const innertext = document.getElementById(id)
-    const innertextvalue = innertext.innerText
-    const innertextvaluenumber = parseInt(innertextvalue)
+// Add Money
+document.getElementById("add-money-btn").addEventListener("click", function (e) {
+  e.preventDefault();
+  const account = document.getElementById("account-number").value;
+  const addMoney = getInputValueNumber("add-money");
+  const pin = getInputValueNumber("pin-number");
+  const balance = getInputValueInner("tk");
 
-    return innertextvaluenumber
-}
-function toggoling(id){
-    const form = document.getElementsByClassName('forms')
+  if (account.length < 11) return alert("Invalid account number");
+  if (pin !== validpin) return alert("Invalid PIN");
 
-    for(const forms of form){
-        forms.style.display ='none';
-    }
+  document.getElementById("tk").innerText = balance + addMoney;
 
-    document.getElementById(id).display.style ='block';
-}
+  transationData.push({ name: "Add Money", date: new Date().toLocaleString() });
+  alert("Money Added Successfully!");
+});
 
-document.getElementById('add-money-btn').addEventListener('click',function(e){
-    e.preventDefault()
-   
-    const bank = document.getElementById('bank').value
-    const Accountnumber = document.getElementById('account-number').value
-    const Addmoney = getInputValueNumber('add-money')
-    const Pin = getInputValueNumber('pin-number')
+// Cash Out
+document.getElementById("cash-out-btn").addEventListener("click", function (e) {
+  e.preventDefault();
+  const agent = document.getElementById("agent-number").value;
+  const withdraw = getInputValueNumber("withdraw-money");
+  const pin = getInputValueNumber("pinnumber");
+  const balance = getInputValueInner("tk");
 
-    const AvilableBalence = getInputValueInner('tk')
-   if(Accountnumber.length<11){
-    alert("enter your valid account number")
-    return
-   }
+  if (agent.length < 11) return alert("Invalid agent number");
+  if (pin !== validpin) return alert("Invalid PIN");
+  if (withdraw > balance) return alert("Not enough balance");
 
-   if (Pin!==validpin){
-    alert("enter your valid pin")
-    return
-   }
+  document.getElementById("tk").innerText = balance - withdraw;
 
-    const totalnewAilableBalence = Addmoney + AvilableBalence
-    document.getElementById('tk').innerText =totalnewAilableBalence
+  transationData.push({ name: "Cash Out", date: new Date().toLocaleString() });
+  alert("Cash Out Successful!");
+});
 
-
-    const data ={
-        name:"Add-Money",
-        date : new Date().toLocaleDateString()
-    }
-    transationData.push(data)
-   
-})
-
-
-// toggoling feature
-document.getElementById('add-btn').addEventListener('click',function(e){
-    e.preventDefault()
-   toggoling('add-money-bank')
-
-   const formsbtn = document.getElementsByClassName('form-btn')
-   for (const formbtn of formsbtn){
-    
-   }
-
-})
-document.getElementById('cash-btn').addEventListener('click',function(e){
-    e.preventDefault()
-
-   toggoling('cash-out')
-   
-
-})
-document.getElementById('transfer-btn').addEventListener('click',function(e){
-    e.preventDefault()
-
-   toggoling('transfer-money')
-   
-
-})
-document.getElementById('bonus-btn').addEventListener('click',function(e){
-    e.preventDefault()
-
-    toggoling('get-bonus')
-   
-
-})
-document.getElementById('bonus-btn').addEventListener('click',function(e){
-    e.preventDefault()
-
-    toggoling('get-bonus')
-   
-
-})
-document.getElementById('pay-bill-btn').addEventListener('click',function(e){
-    e.preventDefault()
-
-    toggoling('pay-bill')
-   
-
-})
-document.getElementById('transation-btn').addEventListener('click',function(e){
-    e.preventDefault()
-
-    toggoling('transation')
-   
-
-})
-
-// cash out section
-document.getElementById('cash-out-btn').addEventListener('click',function(e){
-    e.preventDefault(e)
-    const agent = document.getElementById('agent-number').value
-    const WithdrawMoney = getInputValueNumber('withdraw-money')
-    const PinNumber = getInputValueNumber('pinnumber')
-
-    if(agent.length<11){
-        alert('Please provide Correct Number')
-        return
-    }
-    if(PinNumber!==validpin){
-        alert('Please Provide Correct Pin Number ')
-        return
-    }
-
-    const TotalBalence = getInputValueInner('tk')
-
-
-    const totalwithdrawBalence = TotalBalence - WithdrawMoney
-    document.getElementById('tk').innerText=
-    totalwithdrawBalence
-
-    const data ={
-        name :"Cash-out",
-        date : new Date().toLocaleDateString()
-    }
-    transationData.push(data)
-})
+// menu buttons
+document.getElementById("add-btn").addEventListener("click", () => toggoling("add-money-bank"));
+document.getElementById("cash-btn").addEventListener("click", () => toggoling("cash-out"));
+document.getElementById("transation-btn").addEventListener("click", () => {
+  toggoling("transation");
+  renderTransactions();
+});
