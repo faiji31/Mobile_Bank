@@ -1,5 +1,8 @@
 const validpin =1234
 
+const transationData =[]
+
+
 function getInputValueNumber(id){
     const inputField = document.getElementById(id)
     const inputFieldValue = inputField.value
@@ -23,7 +26,7 @@ function toggoling(id){
         forms.style.display ='none';
     }
 
-    document.getElementById(id).style.display ='block';
+    document.getElementById(id).display.style ='block';
 }
 
 document.getElementById('add-money-btn').addEventListener('click',function(e){
@@ -47,13 +50,21 @@ document.getElementById('add-money-btn').addEventListener('click',function(e){
 
     const totalnewAilableBalence = Addmoney + AvilableBalence
     document.getElementById('tk').innerText =totalnewAilableBalence
+
+
+    const data ={
+        name:"Add-Money",
+        date : new Date().toLocaleDateString()
+    }
+    transationData.push(data)
    
 })
+
 
 // toggoling feature
 document.getElementById('add-btn').addEventListener('click',function(e){
     e.preventDefault()
-   toggoling(add-money-bank)
+   toggoling('add-money-bank')
 
    const formsbtn = document.getElementsByClassName('form-btn')
    for (const formbtn of formsbtn){
@@ -126,4 +137,10 @@ document.getElementById('cash-out-btn').addEventListener('click',function(e){
     const totalwithdrawBalence = TotalBalence - WithdrawMoney
     document.getElementById('tk').innerText=
     totalwithdrawBalence
+
+    const data ={
+        name :"Cash-out",
+        date : new Date().toLocaleDateString()
+    }
+    transationData.push(data)
 })
